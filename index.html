@@ -893,7 +893,31 @@ document.querySelectorAll('.nav-menu a').forEach(link=>{
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:35px;
 }
+/* IMAGE SIZE - DESKTOP */
+.platform-box img{
+  width:120px;        /* Bigger on desktop */
+  height:auto;
+  margin-bottom:20px;
+  transition:0.3s ease;
+}
 
+/* Slight zoom effect on hover */
+.platform-box:hover img{
+  transform:scale(1.08);
+}
+
+/* MOBILE SIZE */
+@media(max-width:900px){
+  .platform-box img{
+    width:100px;      /* Slightly smaller on mobile */
+  }
+}
+
+@media(max-width:480px){
+  .platform-box img{
+    width:85px;       /* Perfect for small phones */
+  }
+}
 /* BOX */
 .platform-box{
   background:#ffffff;
