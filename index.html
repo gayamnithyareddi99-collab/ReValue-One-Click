@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReValue One-Click</title>
+
+<style>
+
+/* ===== GLOBAL ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  background:#ffffff;
+  color:#1f2d3d;
+}
+
+section{
+  padding:100px 8%;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  background:#ffffff;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  z-index:1000;
+}
+
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 8%;
+}
+
+.logo{
+  font-weight:700;
+  font-size:20px;
+  color:#f39c12;
+}
+
+.nav-links{
+  display:flex;
+  gap:30px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#1f2d3d;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#f39c12;
+}
+
+/* Mobile Menu */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+.mobile-menu{
+  display:none;
+  flex-direction:column;
+  background:#ffffff;
+  padding:20px 8%;
+  gap:15px;
+}
+
+.mobile-menu a{
+  text-decoration:none;
+  color:#1f2d3d;
+  font-weight:500;
+}
+
+/* ===== HERO ===== */
+.hero{
+  background:#f7f9fc;
+  padding-top:150px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.hero span{
+  color:#f39c12;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  font-size:18px;
+  line-height:1.7;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  background:#f39c12;
+  color:#ffffff;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* ===== ABOUT ===== */
+.about{
+  background:#ffffff;
+  text-align:center;
+}
+
+.about h2{
+  font-size:34px;
+  margin-bottom:20px;
+}
+
+.about p{
+  max-width:800px;
+  margin:auto;
+  line-height:1.8;
+}
+
+/* ===== HOW IT WORKS ===== */
+.process{
+  background:#f7f9fc;
+  text-align:center;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  margin-top:60px;
+}
+
+.step{
+  background:#ffffff;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.step h4{
+  margin-bottom:10px;
+  color:#f39c12;
+}
+
+
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .mobile-menu.show{
+    display:flex;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="nav-container">
+    <div class="logo">ReValue One-Click</div>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#process">How It Works</a>
+      <a href="#market">Market</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#process" onclick="closeMenu()">How It Works</a>
+      <a href="#market" onclick="closeMenu()">Market</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+</div>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      ReValue <span>One-Click</span>
+    </div>
+
+    <!-- MENU -->
+    <nav class="nav-menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#platform">Platform</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a href="#pricing" class="nav-btn">Get Started</a>
+    </nav>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</header>
+
+
+<style>
+
+/* NAVBAR BASE */
+.navbar{
+  width:100%;
+  background:#ffffff;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
+  font-family:'Segoe UI',sans-serif;
+}
+
+.nav-container{
+  max-width:1300px;
+  margin:auto;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* LOGO */
+.logo{
+  font-size:22px;
+  font-weight:700;
+  color:#1f2d3d;
+}
+
+.logo span{
+  color:#e67e22;
+}
+
+/* MENU DESKTOP */
+.nav-menu{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.nav-menu a{
+  text-decoration:none;
+  color:#333;
+  font-size:15px;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.nav-menu a:hover{
+  color:#e67e22;
+}
+
+/* CTA BUTTON */
+.nav-btn{
+  background:#e67e22;
+  color:#fff !important;
+  padding:8px 18px;
+  border-radius:20px;
+  transition:0.3s;
+}
+
+.nav-btn:hover{
+  background:#d35400;
+}
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:25px;
+  height:3px;
+  background:#e67e22;
+  border-radius:3px;
+  transition:0.3s;
+}
+
+/* MOBILE STYLE */
+@media(max-width:900px){
+
+  .nav-menu{
+    position:absolute;
+    top:70px;
+    right:-100%;
+    background:#ffffff;
+    width:250px;
+    height:100vh;
+    flex-direction:column;
+    padding-top:40px;
+    gap:25px;
+    transition:0.4s ease;
+    box-shadow:-5px 0 20px rgba(0,0,0,0.05);
+  }
+
+  .nav-menu.active{
+    right:0;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+}
+
+</style>
+
+
+<script>
+
+/* TOGGLE MENU */
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', ()=>{
+  navMenu.classList.toggle('active');
+});
+
+/* CLOSE MENU WHEN CLICK LINK (Mobile) */
+document.querySelectorAll('.nav-menu a').forEach(link=>{
+  link.addEventListener('click', ()=>{
+    navMenu.classList.remove('active');
+  });
+});
+
+</script>
+<!-- PREMIUM HOME / HERO SECTION -->
+<section class="hero-section" id="home">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-container">
+    
+    <div class="hero-content">
+      <h1>
+        Turn <span class="highlight">One Photo</span> 
+        Into Instant Value
+      </h1>
+
+      <p>
+        AI-powered resale, trade-in & recycling engine built for the UK circular economy.
+        Upload once. Execute in one click.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#pricing" class="btn-primary">Start Free Valuation</a>
+        <a href="#uk-market" class="btn-outline">See Market Opportunity</a>
+      </div>
+    </div>
+
+    <!-- Floating Glass Card -->
+    <div class="hero-card">
+      <h3>AI Confidence Score</h3>
+      <div class="score">92%</div>
+      <p>High resale probability<br>Estimated sell time: 4 days</p>
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+
+/* HERO SECTION */
+.hero-section{
+  position:relative;
+  background: linear-gradient(135deg, #ff8c00, #e65100);
+  padding:160px 8%;
+  font-family:'Segoe UI', sans-serif;
+  overflow:hidden;
+  color:#fff;
+}
+
+/* Animated Background Circles */
+.hero-section::before,
+.hero-section::after{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  filter:blur(60px);
+  animation:float 8s infinite ease-in-out alternate;
+}
+
+.hero-section::before{
+  top:-100px;
+  left:-100px;
+}
+
+.hero-section::after{
+  bottom:-120px;
+  right:-100px;
+}
+
+@keyframes float{
+  from{ transform:translateY(0px); }
+  to{ transform:translateY(40px); }
+}
+
+/* CONTAINER */
+.hero-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
+  flex-wrap:wrap;
+}
+
+/* TEXT */
+.hero-content{
+  max-width:600px;
+}
+
+.hero-content h1{
+  font-size:52px;
+  font-weight:800;
+  margin-bottom:25px;
+  line-height:1.2;
+}
+
+.highlight{
+  background:#fff;
+  color:#e65100;
+  padding:4px 14px;
+  border-radius:10px;
+}
+
+.hero-content p{
+  font-size:20px;
+  margin-bottom:40px;
+  color:#fff3e0;
+  line-height:1.6;
+}
+
+/* BUTTONS */
+.hero-buttons{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:#ffffff;
+  color:#e65100;
+  padding:15px 34px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:700;
+  transition:0.3s ease;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.btn-outline{
+  border:2px solid #ffffff;
+  color:#ffffff;
+  padding:15px 34px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:700;
+  transition:0.3s ease;
+}
+
+.btn-outline:hover{
+  background:#ffffff;
+  color:#e65100;
+  transform:translateY(-4px);
+}
+
+/* FLOATING CARD */
+.hero-card{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(15px);
+  padding:40px;
+  border-radius:20px;
+  width:300px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+  animation:cardFloat 6s infinite ease-in-out alternate;
+}
+
+@keyframes cardFloat{
+  from{ transform:translateY(0px); }
+  to{ transform:translateY(20px); }
+}
+
+.hero-card h3{
+  margin-bottom:15px;
+  font-size:18px;
+}
+
+.score{
+  font-size:48px;
+  font-weight:800;
+  margin-bottom:15px;
+}
+
+.hero-card p{
+  font-size:14px;
+  color:#fff3e0;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-container{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-content h1{
+    font-size:38px;
+  }
+
+  .hero-card{
+    margin-top:40px;
+  }
+}
+
+</style>
+<!-- ABOUT SECTION -->
+<section class="about-section" id="about">
+  <div class="about-container">
+
+    <div class="about-header">
+      <h2>About ReValue One-Click</h2>
+      <p>
+        UK’s AI-powered circular commerce decision engine transforming
+        how products are valued, routed, and reused.
+      </p>
+    </div>
+
+    <div class="about-grid">
+
+      <!-- LEFT CONTENT -->
+      <div class="about-content">
+        <h3>What We Do</h3>
+        <p>
+          ReValue One-Click turns a single photo into an instant,
+          executable resale, trade-in, refurbishment, or recycling decision.
+          Instead of forcing users to search multiple platforms,
+          our AI delivers the best route in one click.
+        </p>
+
+        <h3>Why It Matters</h3>
+        <p>
+          The UK recommerce market is growing rapidly, yet consumers
+          struggle with uncertainty, trust gaps, and fragmented processes.
+          We remove friction using computer vision, probabilistic valuation,
+          and intelligent routing optimisation.
+        </p>
+
+        <h3>Our Innovation</h3>
+        <ul>
+          <li>✔ AI Condition & Sellability Scoring</li>
+          <li>✔ Trade-In Policy Optimisation Engine</li>
+          <li>✔ Multi-Objective Routing (Value, Time, Carbon)</li>
+          <li>✔ Auto-Generated Digital Lifecycle Ledger</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT HIGHLIGHT CARD -->
+      <div class="about-card">
+        <h4>Our Mission</h4>
+        <p>
+          To streamline resale, trade-in, and recycling through smart automation,
+          enabling consumers and retailers to unlock product value with
+          confidence and transparency.
+        </p>
+
+        <div class="stats">
+          <div>
+            <h5>£4.8B+</h5>
+            <span>UK Recommerce Market</span>
+          </div>
+          <div>
+            <h5>65%</h5>
+            <span>UK Buy Second-Hand</span>
+          </div>
+          <div>
+            <h5>AI</h5>
+            <span>Powered Decision Engine</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+
+/* SECTION */
+.about-section{
+  background:#ffffff;
+  padding:120px 8%;
+  font-family:'Segoe UI', sans-serif;
+}
+
+.about-container{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* HEADER */
+.about-header{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.about-header h2{
+  font-size:38px;
+  color:#1f2d3d;
+  margin-bottom:20px;
+}
+
+.about-header p{
+  font-size:18px;
+  color:#666;
+  max-width:750px;
+  margin:auto;
+  line-height:1.6;
+}
+
+/* GRID */
+.about-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+/* CONTENT */
+.about-content h3{
+  margin-top:30px;
+  margin-bottom:15px;
+  font-size:22px;
+  color:#e67e22;
+}
+
+.about-content p{
+  color:#555;
+  line-height:1.7;
+  font-size:16px;
+}
+
+.about-content ul{
+  margin-top:15px;
+  padding-left:0;
+  list-style:none;
+}
+
+.about-content ul li{
+  margin:12px 0;
+  color:#444;
+  font-size:15px;
+}
+
+/* CARD */
+.about-card{
+  background:#f9f9f9;
+  padding:50px 40px;
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+  transition:0.3s ease;
+}
+
+.about-card:hover{
+  transform:translateY(-8px);
+}
+
+.about-card h4{
+  font-size:22px;
+  margin-bottom:20px;
+  color:#1f2d3d;
+}
+
+.about-card p{
+  font-size:15px;
+  color:#555;
+  line-height:1.6;
+  margin-bottom:40px;
+}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:25px;
+}
+
+.stats h5{
+  font-size:26px;
+  color:#e67e22;
+  margin-bottom:5px;
+}
+
+.stats span{
+  font-size:14px;
+  color:#777;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+</style>
+<!-- PLATFORM SECTION -->
+<section class="platform-section" id="platform">
+  <div class="container">
+    <h2>ReValue Platform Intelligence</h2>
+    <p class="subtitle">AI-powered circular commerce infrastructure</p>
+
+    <div class="platform-grid">
+
+      <!-- BOX 1 -->
+      <div class="platform-box">
+        <img src="AI Valuation Engine.jpeg" alt="AI Engine">
+        <h3>AI Valuation Engine</h3>
+        <p>Instant resale & trade-in valuation.</p>
+        <button class="learn-btn">Learn More</button>
+        <div class="more-content">
+          <p>
+            Uses multimodal AI inference to generate probabilistic
+            resale bands, sellability score, and time-to-sell prediction.
+          </p>
+        </div>
+      </div>
+
+      <!-- BOX 2 -->
+      <div class="platform-box">
+        <img src="Trade-In Optimisation.jpeg" alt="Trade-In">
+        <h3>Trade-In Optimisation</h3>
+        <p>Policy-aware partner graph engine.</p>
+        <button class="learn-btn">Learn More</button>
+        <div class="more-content">
+          <p>
+            Dynamically evaluates partner rules, eligibility thresholds,
+            logistics coverage, and acceptance probability.
+          </p>
+        </div>
+      </div>
+
+      <!-- BOX 3 -->
+      <div class="platform-box">
+        <img src="Smart Route Engine.jpeg" alt="Routing">
+        <h3>Smart Route Engine</h3>
+        <p>Value, time & carbon optimisation.</p>
+        <button class="learn-btn">Learn More</button>
+        <div class="more-content">
+          <p>
+            Multi-objective optimisation selects the best circular
+            pathway with minimal friction and abandonment risk.
+          </p>
+        </div>
+      </div>
+
+      <!-- BOX 4 -->
+      <div class="platform-box">
+        <img src="Dynamic Recycling.jpeg" alt="Recycling">
+        <h3>Dynamic Recycling</h3>
+        <p>Real-time pickup pricing discovery.</p>
+        <button class="learn-btn">Learn More</button>
+        <div class="more-content">
+          <p>
+            Combines material detection, service availability,
+            and route density for live recycling quotes.
+          </p>
+        </div>
+      </div>
+
+      <!-- BOX 5 -->
+      <div class="platform-box">
+        <img src="Lifecycle Ledger.jpeg" alt="Lifecycle">
+        <h3>Lifecycle Ledger</h3>
+        <p>Digital product passport layer.</p>
+        <button class="learn-btn">Learn More</button>
+        <div class="more-content">
+          <p>
+            Auto-generates traceable lifecycle records aligned
+            with Digital Product Passport compliance frameworks.
+          </p>
+        </div>
+      </div>
+
+      <!-- BOX 6 -->
+      <div class="platform-box">
+        <img src="B2B Analytics.jpeg" alt="Analytics">
+        <h3>B2B Analytics</h3>
+        <p>SKU-level circular intelligence.</p>
+        <button class="learn-btn">Learn More</button>
+        <div class="more-content">
+          <p>
+            Provides defect clustering, condition distribution,
+            elasticity modelling, and partner performance insights.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+
+/* SECTION */
+.platform-section{
+  background:linear-gradient(135deg,#e67e22,#d35400);
+  padding:120px 8%;
+  font-family:'Segoe UI',sans-serif;
+  text-align:center;
+  color:#fff;
+}
+
+.container{
+  max-width:1300px;
+  margin:auto;
+}
+
+.platform-section h2{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  margin-bottom:60px;
+  color:#ffe9dc;
+}
+
+/* GRID */
+.platform-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:35px;
+}
+
+/* BOX */
+.platform-box{
+  background:#ffffff;
+  color:#333;
+  padding:35px 25px;
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
+  transition:0.3s ease;
+  position:relative;
+}
+
+.platform-box:hover{
+  transform:translateY(-8px);
+}
+
+.platform-box img{
+  width:70px;
+  margin-bottom:20px;
+}
+
+.platform-box h3{
+  color:#e67e22;
+  margin-bottom:10px;
+}
+
+.platform-box p{
+  font-size:14px;
+}
+
+/* BUTTON */
+.learn-btn{
+  margin-top:15px;
+  background:#e67e22;
+  color:#fff;
+  border:none;
+  padding:8px 18px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.learn-btn:hover{
+  background:#d35400;
+}
+
+/* EXPAND CONTENT */
+.more-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.4s ease;
+}
+
+.platform-box.active .more-content{
+  max-height:150px;
+  margin-top:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .platform-section h2{
+    font-size:28px;
+  }
+}
+
+</style>
+
+<script>
+document.querySelectorAll('.learn-btn').forEach(button=>{
+  button.addEventListener('click', function(){
+    const box = this.closest('.platform-box');
+    box.classList.toggle('active');
+  });
+});
+</script>
+<!-- HOW IT WORKS - CHAIN FLOW STYLE -->
+<section class="how-chain-section" id="how-it-works">
+  <div class="how-chain-container">
+
+    <div class="how-chain-header">
+      <h2>How ReValue One-Click Works</h2>
+      <p>
+        One photo. One intelligent decision. One-click execution.
+      </p>
+    </div>
+
+    <div class="chain-wrapper">
+
+      <!-- STEP 1 -->
+      <div class="chain-step">
+        <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="Upload Icon">
+        <h3>Upload</h3>
+        <p>Take a photo of your item</p>
+      </div>
+
+      <div class="chain-line"></div>
+
+      <!-- STEP 2 -->
+      <div class="chain-step">
+        <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="AI Icon">
+        <h3>AI Analysis</h3>
+        <p>Condition detection & valuation</p>
+      </div>
+
+      <div class="chain-line"></div>
+
+      <!-- STEP 3 -->
+      <div class="chain-step">
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Optimise Icon">
+        <h3>Smart Routing</h3>
+        <p>Best resale / trade / recycle path</p>
+      </div>
+
+      <div class="chain-line"></div>
+
+      <!-- STEP 4 -->
+      <div class="chain-step">
+        <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="Execute Icon">
+        <h3>One-Click</h3>
+        <p>Instant partner execution</p>
+      </div>
+
+      <div class="chain-line"></div>
+
+      <!-- STEP 5 -->
+      <div class="chain-step">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Ledger Icon">
+        <h3>Lifecycle Record</h3>
+        <p>Digital product passport created</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+
+/* SECTION */
+.how-chain-section{
+  background:#ffffff;
+  padding:120px 6%;
+  font-family:'Segoe UI', sans-serif;
+  text-align:center;
+}
+
+.how-chain-container{
+  max-width:1300px;
+  margin:auto;
+}
+
+/* HEADER */
+.how-chain-header{
+  margin-bottom:80px;
+}
+
+.how-chain-header h2{
+  font-size:40px;
+  color:#1f2d3d;
+  margin-bottom:15px;
+}
+
+.how-chain-header p{
+  font-size:18px;
+  color:#666;
+}
+
+/* CHAIN WRAPPER */
+.chain-wrapper{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+/* STEP STYLE */
+.chain-step{
+  width:180px;
+  text-align:center;
+}
+
+.chain-step img{
+  width:60px;
+  margin-bottom:15px;
+  transition:0.3s ease;
+}
+
+.chain-step img:hover{
+  transform:scale(1.15);
+}
+
+.chain-step h3{
+  color:#e67e22;
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+.chain-step p{
+  font-size:14px;
+  color:#555;
+}
+
+/* CONNECTING LINE */
+.chain-line{
+  height:3px;
+  width:60px;
+  background:linear-gradient(to right,#e67e22,#f39c12);
+  border-radius:5px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .chain-wrapper{
+    flex-direction:column;
+  }
+
+  .chain-line{
+    width:3px;
+    height:40px;
+  }
+}
+
+</style>
+<!-- UK MARKET SECTION -->
+<section class="uk-market-section" id="uk-market">
+  <div class="uk-container">
+
+    <h2>UK Market Opportunity</h2>
+    <p class="uk-subtitle">
+      Positioned in one of the fastest-growing circular commerce markets in Europe.
+    </p>
+
+    <div class="market-bars">
+
+      <!-- MARKET SIZE -->
+      <div class="market-item">
+        <div class="market-header">
+          <span>UK Recommerce Market</span>
+          <span>£4.8B</span>
+        </div>
+        <div class="bar-bg">
+          <div class="bar-fill bar1"></div>
+        </div>
+      </div>
+
+      <!-- SECOND HAND USERS -->
+      <div class="market-item">
+        <div class="market-header">
+          <span>Consumers Buying Second-Hand</span>
+          <span>65%</span>
+        </div>
+        <div class="bar-bg">
+          <div class="bar-fill bar2"></div>
+        </div>
+      </div>
+
+      <!-- PRODUCTS IN CIRCULATION -->
+      <div class="market-item">
+        <div class="market-header">
+          <span>Products Kept in Circulation</span>
+          <span>199M+</span>
+        </div>
+        <div class="bar-bg">
+          <div class="bar-fill bar3"></div>
+        </div>
+      </div>
+
+      <!-- DIGITAL USERS -->
+      <div class="market-item">
+        <div class="market-header">
+          <span>Internet Users (UK)</span>
+          <span>66M+</span>
+        </div>
+        <div class="bar-bg">
+          <div class="bar-fill bar4"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+
+/* SECTION */
+.uk-market-section{
+  background:#e67e22;
+  padding:110px 8%;
+  font-family:'Segoe UI', sans-serif;
+  color:#fff;
+  text-align:center;
+}
+
+.uk-container{
+  max-width:1000px;
+  margin:auto;
+}
+
+.uk-market-section h2{
+  font-size:36px;
+  margin-bottom:15px;
+}
+
+.uk-subtitle{
+  font-size:18px;
+  margin-bottom:60px;
+  color:#fff3e0;
+}
+
+/* MARKET ITEMS */
+.market-item{
+  margin-bottom:35px;
+  text-align:left;
+}
+
+.market-header{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+/* BAR STYLE */
+.bar-bg{
+  width:100%;
+  height:14px;
+  background:rgba(255,255,255,0.25);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.bar-fill{
+  height:100%;
+  background:#ffffff;
+  border-radius:20px;
+  width:0;
+  transition:width 1.5s ease;
+}
+
+/* INDIVIDUAL WIDTHS */
+.bar1{ width:90%; }
+.bar2{ width:65%; }
+.bar3{ width:80%; }
+.bar4{ width:75%; }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .uk-market-section h2{
+    font-size:28px;
+  }
+}
+
+</style>
+<!-- FOUNDER SECTION -->
+<section class="founder-section" id="founder">
+  <div class="founder-container">
+
+    <h2>Founder & Vision</h2>
+
+    <div class="founder-card">
+      <h3>Azad Singh</h3>
+      <p class="founder-role">
+        Founder & CEO – ReValue One-Click | Hampshire, UK
+      </p>
+
+      <p>
+        Azad Singh is a UK-based business development and retail operations 
+        specialist with over five years of experience driving revenue growth, 
+        managing KPI-based teams, and improving customer engagement.
+      </p>
+
+      <p>
+        A Global MBA graduate from Solent University, he combines academic 
+        research in innovation with real-world retail leadership experience. 
+        His deep understanding of UK consumer behaviour and post-sale 
+        inefficiencies inspired the creation of ReValue One-Click — 
+        an AI-powered circular commerce infrastructure designed to 
+        simplify resale, trade-in, and recycling decisions.
+      </p>
+
+      <div class="founder-highlights">
+        <div class="highlight-box">Global MBA – UK</div>
+        <div class="highlight-box">Retail & Sales Leadership</div>
+        <div class="highlight-box">AI & Circular Economy Vision</div>
+        <div class="highlight-box">UK Market Expertise</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+/* FOUNDER SECTION */
+.founder-section{
+  background:#ffffff;
+  padding:120px 8%;
+  font-family:'Segoe UI', sans-serif;
+  text-align:center;
+}
+
+.founder-container{
+  max-width:900px;
+  margin:auto;
+}
+
+.founder-section h2{
+  font-size:34px;
+  margin-bottom:50px;
+  color:#1f2d3d;
+}
+
+/* CARD */
+.founder-card{
+  background:#f9f9f9;
+  padding:50px 40px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+.founder-card h3{
+  font-size:26px;
+  margin-bottom:10px;
+  color:#d68910;
+}
+
+.founder-role{
+  font-weight:600;
+  color:#666;
+  margin-bottom:25px;
+}
+
+.founder-card p{
+  line-height:1.8;
+  color:#444;
+  margin-bottom:20px;
+}
+
+/* HIGHLIGHTS */
+.founder-highlights{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  margin-top:30px;
+}
+
+.highlight-box{
+  background:#ffffff;
+  padding:10px 20px;
+  border-radius:30px;
+  font-size:14px;
+  color:#333;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  border:1px solid #eee;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .founder-card{
+    padding:35px 20px;
+  }
+}
+
+</style>
+<!-- PRICING SECTION -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-container">
+
+    <h2>Simple & Transparent Pricing</h2>
+    <p class="pricing-subtitle">
+      Flexible pricing designed for consumers, SMEs, and enterprise partners.
+    </p>
+
+    <div class="pricing-grid">
+
+      <!-- PLAN 1 -->
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <div class="price">£0</div>
+        <p class="plan-desc">Perfect for casual users</p>
+
+        <ul>
+          <li>✔ Free AI Valuation</li>
+          <li>✔ Condition Score</li>
+          <li>✔ Basic Routing Suggestion</li>
+          <li>✔ GDPR Secure</li>
+        </ul>
+
+        <a href="#contact" class="pricing-btn">Get Started</a>
+      </div>
+
+      <!-- PLAN 2 -->
+      <div class="pricing-card popular">
+        <div class="badge">Most Popular</div>
+        <h3>Advanced</h3>
+        <div class="price">£1.49</div>
+        <p class="plan-desc">Per executed transaction</p>
+
+        <ul>
+          <li>✔ Optimised Trade-In Offers</li>
+          <li>✔ Multi-Channel Routing</li>
+          <li>✔ Execution on Your Behalf</li>
+          <li>✔ Confidence Scoring</li>
+        </ul>
+
+        <a href="#contact" class="pricing-btn">Use Advanced</a>
+      </div>
+
+      <!-- PLAN 3 -->
+      <div class="pricing-card">
+        <h3>Partner Pro</h3>
+        <div class="price">£19.99<span>/month</span></div>
+        <p class="plan-desc">For SMEs & Retailers</p>
+
+        <ul>
+          <li>✔ SKU-Level Analytics</li>
+          <li>✔ API Integration</li>
+          <li>✔ Verification-as-a-Service</li>
+          <li>✔ Circular Compliance Dashboard</li>
+        </ul>
+
+        <a href="#contact" class="pricing-btn">Become Partner</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+/* Smooth Scroll */
+html{
+  scroll-behavior:smooth;
+}
+
+/* SECTION */
+.pricing-section{
+  background:#d68910;
+  padding:120px 8%;
+  font-family:'Segoe UI', sans-serif;
+  text-align:center;
+}
+
+.pricing-container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.pricing-section h2{
+  font-size:36px;
+  color:#ffffff;
+  margin-bottom:15px;
+}
+
+.pricing-subtitle{
+  font-size:18px;
+  color:#fff5e6;
+  margin-bottom:60px;
+}
+
+/* GRID */
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+/* CARD */
+.pricing-card{
+  background:#ffffff;
+  padding:40px 30px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  position:relative;
+  transition:0.3s ease;
+}
+
+.pricing-card:hover{
+  transform:translateY(-10px);
+}
+
+/* POPULAR */
+.popular{
+  transform:scale(1.05);
+}
+
+.badge{
+  position:absolute;
+  top:-15px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#1f2d3d;
+  color:#fff;
+  padding:6px 18px;
+  font-size:12px;
+  border-radius:20px;
+}
+
+/* TEXT */
+.pricing-card h3{
+  font-size:22px;
+  margin-bottom:15px;
+  color:#1f2d3d;
+}
+
+.price{
+  font-size:36px;
+  font-weight:bold;
+  margin-bottom:10px;
+  color:#d68910;
+}
+
+.price span{
+  font-size:16px;
+  font-weight:normal;
+  color:#555;
+}
+
+.plan-desc{
+  font-size:14px;
+  color:#777;
+  margin-bottom:25px;
+}
+
+.pricing-card ul{
+  list-style:none;
+  padding:0;
+  margin-bottom:30px;
+}
+
+.pricing-card ul li{
+  margin:12px 0;
+  color:#444;
+  font-size:15px;
+}
+
+/* BUTTON */
+.pricing-btn{
+  display:inline-block;
+  text-decoration:none;
+  background:#d68910;
+  color:#fff;
+  padding:12px 28px;
+  border-radius:30px;
+  font-weight:600;
+  transition:0.3s ease;
+}
+
+.pricing-btn:hover{
+  background:#b9770e;
+}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .pricing-grid{
+    grid-template-columns:1fr;
+  }
+
+  .popular{
+    transform:none;
+  }
+}
+
+</style>
+<!-- FAQ SECTION -->
+<section class="faq-section" id="faq">
+  <div class="faq-container">
+
+    <h2>Frequently Asked Questions</h2>
+    <p class="faq-subtitle">
+      Everything you need to know about ReValue One-Click and how it works.
+    </p>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        What is ReValue One-Click?
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        ReValue One-Click is an AI-powered circular commerce platform that helps users instantly
+        decide whether to sell, trade-in, refurbish, or recycle a product using a single image.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How does the AI valuation work?
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        Our AI engine analyses product condition, category trends, partner policies, and
+        logistics factors to generate a confidence-based resale or trade-in recommendation.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Is there any cost to use the platform?
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        Basic valuation is free. A small execution fee may apply only when a transaction
+        is completed through our routing engine.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How is ReValue different from resale marketplaces?
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        Unlike traditional marketplaces, ReValue does not require manual listing or price comparison.
+        It provides a one-click optimised decision across resale, trade-in, and recycling options.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Is my data secure?
+        <span>+</span>
+      </div>
+      <div class="faq-answer">
+        Yes. ReValue follows UK GDPR principles with secure cloud infrastructure,
+        encryption protocols, and privacy-first data architecture.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+/* FAQ SECTION */
+.faq-section{
+  background:#ffffff;
+  padding:120px 8%;
+  font-family:'Segoe UI', sans-serif;
+}
+
+.faq-container{
+  max-width:900px;
+  margin:auto;
+}
+
+/* MAIN HEADING ORANGE */
+.faq-container h2{
+  font-size:36px;
+  text-align:center;
+  margin-bottom:15px;
+  color:#d68910;
+}
+
+/* SUBTITLE ORANGE LIGHT */
+.faq-subtitle{
+  text-align:center;
+  font-size:18px;
+  color:#d68910;
+  margin-bottom:60px;
+}
+
+/* FAQ ITEM */
+.faq-item{
+  border-bottom:1px solid #eee;
+  padding:20px 0;
+}
+
+/* QUESTION ORANGE */
+.faq-question{
+  font-size:18px;
+  font-weight:600;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:#d68910;
+  transition:0.3s ease;
+}
+
+.faq-question span{
+  font-size:24px;
+  transition:0.3s ease;
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.4s ease, padding 0.3s ease;
+  font-size:16px;
+  line-height:1.7;
+  color:#555;
+}
+
+/* Active */
+.faq-item.active .faq-answer{
+  max-height:200px;
+  padding-top:15px;
+}
+
+.faq-item.active .faq-question span{
+  transform:rotate(45deg);
+}
+
+/* Hover effect */
+.faq-question:hover{
+  color:#b9770e;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .faq-container h2{
+    font-size:28px;
+  }
+
+  .faq-subtitle{
+    font-size:16px;
+  }
+
+  .faq-question{
+    font-size:16px;
+  }
+}
+
+</style>
+
+<script>
+
+/* FAQ TOGGLE */
+document.querySelectorAll(".faq-question").forEach(question => {
+  question.addEventListener("click", () => {
+    const item = question.parentElement;
+
+    document.querySelectorAll(".faq-item").forEach(faq => {
+      if(faq !== item){
+        faq.classList.remove("active");
+      }
+    });
+
+    item.classList.toggle("active");
+  });
+});
+
+</script>
+<!-- CONTACT SECTION -->
+<section class="contact-section" id="contact">
+  <div class="contact-wrapper">
+
+    <h2>Let’s Build Circular Intelligence Together</h2>
+
+    <p>
+      Partner with ReValue One-Click the UK’s AI-powered resale,
+      trade-in and recycling decision engine.
+    </p>
+
+    <a href="mailto:info@revalueoneclick.com?subject=Partnership Inquiry - ReValue One-Click&body=Hello ReValue Team,%0D%0A%0D%0AI am interested in partnering with ReValue One-Click.%0D%0APlease share more details.%0D%0A%0D%0ACompany Name:%0D%0AContact Number:%0D%0A%0D%0AThank you."
+       class="contact-btn">
+       Start a Conversation
+    </a>
+
+  </div>
+</section>
+
+<style>
+
+/* CONTACT SECTION */
+.contact-section{
+  background:linear-gradient(135deg, #d68910, #f39c12);
+  padding:130px 8%;
+  text-align:center;
+  color:#ffffff;
+}
+
+/* Content Wrapper */
+.contact-wrapper{
+  max-width:750px;
+  margin:auto;
+}
+
+/* Heading */
+.contact-wrapper h2{
+  font-size:42px;
+  font-weight:700;
+  margin-bottom:25px;
+  letter-spacing:-1px;
+}
+
+/* Paragraph */
+.contact-wrapper p{
+  font-size:18px;
+  line-height:1.8;
+  opacity:0.95;
+  margin-bottom:45px;
+}
+
+/* Button */
+.contact-btn{
+  display:inline-block;
+  padding:18px 48px;
+  background:#ffffff;
+  color:#d68910;
+  font-weight:700;
+  text-decoration:none;
+  border-radius:50px;
+  transition:all 0.3s ease;
+  box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Hover */
+.contact-btn:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px rgba(0,0,0,0.35);
+  background:#fdfdfd;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .contact-wrapper h2{
+    font-size:30px;
+  }
+
+  .contact-wrapper p{
+    font-size:16px;
+  }
+
+  .contact-btn{
+    padding:15px 35px;
+  }
+}
+
+</style>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-left">
+      <strong>ReValue One-Click</strong>
+      <span class="tagline">AI Circular Commerce Infrastructure</span>
+    </div>
+
+    <div class="footer-right">
+      <span class="flag">🇬🇧 United Kingdom</span>
+      <span class="divider">•</span>
+      <span>© 2026 All Rights Reserved</span>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+
+/* FOOTER */
+.footer{
+  background:#0f0f0f;
+  padding:14px 8%;
+  color:#cfcfcf;
+  font-size:13px;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* Left */
+.footer-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.footer-left strong{
+  color:#ffffff;
+  font-weight:600;
+  letter-spacing:0.5px;
+}
+
+.tagline{
+  opacity:0.6;
+}
+
+/* Right */
+.footer-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.flag{
+  font-weight:500;
+}
+
+.divider{
+  opacity:0.4;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .footer-inner{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+</style>
+
+<script>
+function toggleMenu(){
+  document.getElementById("mobileMenu").classList.toggle("show");
+}
+
+function closeMenu(){
+  document.getElementById("mobileMenu").classList.remove("show");
+}
+</script>
+
+</body>
+</html>
